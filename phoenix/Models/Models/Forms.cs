@@ -6,7 +6,7 @@ namespace DataAccessLibrary.Models
     public partial class Forms
     {
         public int FormId { get; set; }
-        public string FormType { get; set; }
+        public int FormType { get; set; }
         public DateTime FormDate { get; set; }
 
         public Face2faces Face2faces { get; set; }
