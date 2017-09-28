@@ -1,0 +1,62 @@
+<!DOCTYPE html5>
+<html>
+<!--Navigation Bar (temporary)-->
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">The Rising Phoenix Referral Calculator</a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Profile</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Forms
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Referral Slip</a>
+          <a class="dropdown-item" href="#">Here's The Money!</a>
+          <a class="dropdown-item" href="#">Face to Face</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Database</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Data</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<!--Login Page Content-->
+<div style="text-align:center">
+  <img src="http://www.thephoenixhasrisen.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-18-at-4.52.36-PM.png" />
+  <h1>
+    The Rising Phoenix Referral Tracker
+  </h1>
+  <p>
+    The Rising Phoenix is a group of business professionals seeking to expand their businesses through networking.<br />
+    This tracker is designed to document referals and track the success of The Rising Phoenix.
+  </p>
+  <h3>
+     Login
+  </h3>
+  <form action="/action_page.php">
+    Username: <input type="text" name="username"><br><br>
+    Password: <input type="text" name="password"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+  <br><br>
+  <p>CMPS 285 Software Engineering : Group 5 - Allie Laughlin, Sara Roberts, Victoria Murphy, Richard Watkins : 2017</p> 
+</div>
+</html>
