@@ -1,0 +1,36 @@
+﻿@model RisingPhoenix.Models.Attendance
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Attendance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AttendBool)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AttendBool)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Meeting)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Meeting.MeetingId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Member)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Member.Company)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MeetingId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<RisingPhoenix.Models.NonMembers>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NonMemType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NonMemName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NonMemPhone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NonMemEmail)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NonMemType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NonMemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NonMemPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NonMemEmail)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NonMemId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NonMemId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NonMemId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

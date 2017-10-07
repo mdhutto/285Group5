@@ -1,0 +1,47 @@
+﻿@model IEnumerable<RisingPhoenix.Models.Htmoneys>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Income)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Form)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefForm)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Income)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Form.FormId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RefForm.FormId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FormId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FormId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FormId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
