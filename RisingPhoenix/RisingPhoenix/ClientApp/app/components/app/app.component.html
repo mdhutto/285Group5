@@ -1,7 +1,7 @@
 <div style="text-align:center">
   <img src="http://www.thephoenixhasrisen.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-18-at-4.52.36-PM.png" />
 </div>
-
+  <!--SR: This is the old router links/code. I'm leaving this for now until I can serve the project and see what's happening-->
   <a routerLink="/login">Login</a><br />
   <a routerLink="/home">Home</a><br />
   <a routerLink="/profile">Profile</a><br />
@@ -13,11 +13,22 @@
   <a routerLink="/data">Data</a><br />
   <a routerLink="/admin">Admin</a><br />
 
-  <router-outlet></router-outlet>
+<!--SR: This is what was originally on the app.component.html page. Leaving this here until I can serve--> 
+<div class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3'>
+            <nav-menu></nav-menu>
+        </div>
+        <div class='col-sm-9 body-content'>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 
-  <!--Login Page Content-->
+    <router-outlet></router-outlet>
 
-  <div style="text-align:center">
-    <p><em>CMPS 285 Software Engineering : Group 5 - Allie Laughlin, Sara Roberts, Victoria Murphy, Richard Watkins : 2017</em></p>
-  </div>
+    <!--Login Page Content-->
+
+    <div style="text-align:center">
+        <p><em>CMPS 285 Software Engineering : Group 5 - Allie Laughlin, Sara Roberts, Victoria Murphy, Richard Watkins : 2017</em></p>
+    </div>
 

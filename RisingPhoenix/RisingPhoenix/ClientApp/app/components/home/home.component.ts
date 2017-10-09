@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-
+export class HomeComponent {
+/* SR: So this was included in our original A4, but I'm commenting it out to look like what came automatically with .NetCore'
   constructor() { }
 
   ngOnInit() {
   }
-
+*/
 }

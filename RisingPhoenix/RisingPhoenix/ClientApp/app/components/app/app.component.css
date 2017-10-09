@@ -1,0 +1,6 @@
+@media (max-width: 767px) {
+    /* SR: This came with the .Net Core app.component.css */
+    .body-content {
+        padding-top: 50px;
+    }
+}
