@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -28,7 +29,19 @@ import { ReferralComponent } from './referral/referral.component';
     ReferralComponent
   ],
   imports: [
-    BrowserModule
+      BrowserModule,
+      RouterModule.forRoot([
+          { path: 'admin', component: AdminComponent },
+          { path: 'data', component: DataComponent },
+          { path: 'database', component: DatabaseComponent },
+          { path: 'facetoface', component: FacetofaceComponent },
+          { path: 'forms', component: FormsComponent },
+          { path: 'heresthemoney', component: HeresthemoneyComponent },
+          { path: 'home', component: HomeComponent },
+          { path: 'login', component: LoginComponent },
+          { path: 'profile', component: ProfileComponent },
+          { path: 'referral', component: ReferralComponent }
+      ])
   ],
   providers: [],
   bootstrap: [AppComponent]
