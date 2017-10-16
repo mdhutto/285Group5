@@ -1,22 +1,38 @@
+<!--test
+<h3>Components within referralcomponent</h3>
+{{ referrals | json}}
+<app-referrallist></app-referrallist>
+<app-referralnew></app-referralnew>
+<app-referraldetails></app-referraldetails>
+-->
+
+
+<!--Page Content (not test)-->
 <div style="text-align:center">
   <h2>
     Referral Slip
   </h2>
 
-  <form>
-    Date: <input type="date"><br>
-    From: <input type="text"><br>
-    To: <input type="text"><br><br>
-    Referral: <input type="text"><br>
-    Address: <input type="text">Phone<input type="text"><br>
-    City: <input type="text">
-    State: <input type="text">
-    Zip: <input type="text"><br>
-    Email Address: <input type="email"><br>
-    <input type="checkbox">Given your card<br>
-    <input type="checkbox">Told them you would call <br>
-    <input type="checkbox" value="Other">other<br>
-    <input type="submit">
+    <!-- Property binding of text boxes to data fields-->
+    <div>
+      <label>Date: </label>
+      <input [(ngModel)]="referral.FormDate" placeholder="Date">
+    </div>
+    <div>
+      <label>Sender: </label>
+      <input [(ngModel)]="referral.SenderID" placeholder="Sender">
+    </div>
+    <div>
+      <label>Recipient: </label>
+      <input [(ngModel)]="referral.RecipientID" placeholder="Recipient">
+    </div>
+    <div>
+      <label>Client Name: </label>
+      <input [(ngModel)]="referral.ClientID" placeholder="Client">
+    </div>
+    <div>
+      <label>Client Information: </label>
+      <input [(ngModel)]="referral.SenderMsg" placeholder="Phone, Email, Address, etc.">
+    </div>
 
-  </form>
 </div>
