@@ -6,6 +6,11 @@ namespace RisingPhoenix.Models
 {
     public partial class RisingPhoenixDBContext : DbContext
     {
+        public RisingPhoenixDBContext(DbContextOptions<RisingPhoenixDBContext> options)
+            : base(options)
+        {
+
+        }
         public virtual DbSet<Attendance> Attendance { get; set; }
         public virtual DbSet<Clients> Clients { get; set; }
         public virtual DbSet<Face2Faces> Face2Faces { get; set; }
@@ -16,6 +21,9 @@ namespace RisingPhoenix.Models
         public virtual DbSet<NonMembers> NonMembers { get; set; }
         public virtual DbSet<Referrals> Referrals { get; set; }
         public virtual DbSet<Security> Security { get; set; }
+
+        
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
