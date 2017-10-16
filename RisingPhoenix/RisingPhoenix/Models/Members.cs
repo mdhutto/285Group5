@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RisingPhoenix.Models
 {
@@ -25,8 +26,11 @@ namespace RisingPhoenix.Models
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Website { get; set; }
+        [Display(Name = "Member Since")]
         public DateTime MemberSince { get; set; }
+        [Display(Name = "Absence Count")]
         public int AbsenceCount { get; set; }
+        [Display(Name = "Admin?")]
         public bool AdminBool { get; set; }
 
         public Security Security { get; set; }
