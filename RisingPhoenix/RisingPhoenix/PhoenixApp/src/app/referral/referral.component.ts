@@ -10,9 +10,9 @@ import { ReferralService } from './referral.service'; //test
 export class ReferralComponent implements OnInit {
     // test
     referrals: Array<Referral> = [
-        new Referral(1, 1, "Oct10", "Me", "You", "Her", "Hello"),
-        new Referral(1, 2, "Oct10", "Me", "You", "Her", "Hello"),
-        new Referral(1, 3, "Oct10", "Me", "You", "Her", "Hello")
+    //    new Referral(1, 1, "Oct10", "Me", "You", "Her", "Hello"),
+    //    new Referral(1, 2, "Oct10", "Me", "You", "Her", "Hello"),
+    //   new Referral(1, 3, "Oct10", "Me", "You", "Her", "Hello")
     ];
 
     constructor(private _referralService: ReferralService) { }
