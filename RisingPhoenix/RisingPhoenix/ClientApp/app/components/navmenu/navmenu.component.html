@@ -1,23 +1,57 @@
+
 <div class='main-nav'>
-    <div class='navbar navbar-inverse'>
-        <div class='navbar-header'>
-            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-                <span class='sr-only'>Toggle navigation</span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-            </button>
-            <a class='navbar-brand' [routerLink]="['/home']">WebApplication3</a>
-        </div>
-        <div class='clearfix'></div>
-        <div class='navbar-collapse collapse'>
             <ul class='nav navbar-nav'>
                 <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/home']">
-                        <span class='glyphicon glyphicon-home'></span> Home
+                    <a [routerLink]="['/login']">
+                        <!--<span class='glyphicon glyphicon-log-in'></span>--> Login
                     </a>
                 </li>
                 <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/home']">
+                        <!--<span class='glyphicon glyphicon-home'></span>--> Home
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/profile']">
+                        <!--<span class='glyphicon glyphicon-user'></span>--> Profile
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/forms']">
+                        <!--<span class='glyphicon glyphicon-th-list'></span>--> Forms
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/referralslip']">
+                        <!--<span class='glyphicon glyphicon-inbox'></span>--> Referral
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/heresthemoney']">
+                        <!--<span class='glyphicon glyphicon-piggy-bank'></span>--> Here's The Money!
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/facetoface']">
+                        <!--<span class='glyphicon glyphicon-comment'></span>--> Face To Face
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/database']">
+                        <!--<span class='glyphicon glyphicon-folder-open'></span>--> Database
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/data']">
+                        <!--<span class='glyphicon glyphicon-signal'></span>--> Data
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/admin']">
+                        <!--<span class='glyphicon glyphicon-lock'></span>--> Admin
+                    </a>
+                </li>
+<!--               <li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/counter']">
                         <span class='glyphicon glyphicon-education'></span> Counter
                     </a>
@@ -27,7 +61,6 @@
                         <span class='glyphicon glyphicon-th-list'></span> Fetch data
                     </a>
                 </li>
+--> 
             </ul>
         </div>
-    </div>
-</div>
