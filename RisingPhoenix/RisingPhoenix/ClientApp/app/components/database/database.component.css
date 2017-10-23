@@ -8,11 +8,11 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-    background-color: orange
+    background-color: khaki
 }
 
 th {
-    background-color: darkorange;
+    background-color: orange;
     color: black;
 }
 
