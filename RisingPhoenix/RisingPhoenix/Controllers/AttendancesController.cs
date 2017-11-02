@@ -11,9 +11,9 @@ namespace RisingPhoenix.Controllers
 {
     public class AttendancesController : Controller
     {
-        private readonly RisingPhoenixDBContext _context;
+        private readonly TRPDbContext _context;
 
-        public AttendancesController(RisingPhoenixDBContext context)
+        public AttendancesController(TRPDbContext context)
         {
             _context = context;
         }
@@ -21,8 +21,8 @@ namespace RisingPhoenix.Controllers
         // GET: Attendances
         public async Task<IActionResult> Index()
         {
-            var risingPhoenixDBContext = _context.Attendance.Include(a => a.Meeting).Include(a => a.Member);
-            return View(await risingPhoenixDBContext.ToListAsync());
+            var TRPDbContext = _context.Attendance.Include(a => a.Meeting).Include(a => a.Member);
+            return View(await TRPDbContext.ToListAsync());
         }
 
         // GET: Attendances/Details/5

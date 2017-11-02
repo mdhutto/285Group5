@@ -11,9 +11,9 @@ namespace RisingPhoenix.Controllers
 {
     public class FormsController : Controller
     {
-        private readonly RisingPhoenixDBContext _context;
+        private readonly TRPDbContext _context;
 
-        public FormsController(RisingPhoenixDBContext context)
+        public FormsController(TRPDbContext context)
         {
             _context = context;
         }

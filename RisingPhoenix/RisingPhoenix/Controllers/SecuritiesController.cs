@@ -11,9 +11,9 @@ namespace RisingPhoenix.Controllers
 {
     public class SecuritiesController : Controller
     {
-        private readonly RisingPhoenixDBContext _context;
+        private readonly TRPDbContext _context;
 
-        public SecuritiesController(RisingPhoenixDBContext context)
+        public SecuritiesController(TRPDbContext context)
         {
             _context = context;
         }
@@ -21,8 +21,8 @@ namespace RisingPhoenix.Controllers
         // GET: Securities
         public async Task<IActionResult> Index()
         {
-            var risingPhoenixDBContext = _context.Security.Include(s => s.Member);
-            return View(await risingPhoenixDBContext.ToListAsync());
+            var TRPDbContext = _context.Security.Include(s => s.Member);
+            return View(await TRPDbContext.ToListAsync());
         }
 
         // GET: Securities/Details/5

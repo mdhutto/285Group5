@@ -11,9 +11,9 @@ namespace RisingPhoenix.Controllers
 {
     public class MeetingsController : Controller
     {
-        private readonly RisingPhoenixDBContext _context;
+        private readonly TRPDbContext _context;
 
-        public MeetingsController(RisingPhoenixDBContext context)
+        public MeetingsController(TRPDbContext context)
         {
             _context = context;
         }
