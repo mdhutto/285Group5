@@ -20,13 +20,10 @@
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.First)
+                    @Html.DisplayNameFor(model => model.FirstName)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Last)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Photo)
+                    @Html.DisplayNameFor(model => model.LastName)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Company)
@@ -59,13 +56,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.First)
+                @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Last)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Photo)
+                @Html.DisplayFor(modelItem => item.LastName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Company)
