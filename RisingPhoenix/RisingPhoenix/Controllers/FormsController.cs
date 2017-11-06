@@ -53,7 +53,7 @@ namespace RisingPhoenix.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FormId,FormType,FormDate")] Forms forms)
+        public async Task<IActionResult> Create([Bind("FormId,FormType,FormDate,SenderId,RecipientId,RecipientId2,RecipientId3,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace RisingPhoenix.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("FormId,FormType,FormDate")] Forms forms)
+        public async Task<IActionResult> Edit(int id, [Bind("FormId,FormType,FormDate,SenderId,RecipientId,RecipientId2,RecipientId3,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
         {
             if (id != forms.FormId)
             {

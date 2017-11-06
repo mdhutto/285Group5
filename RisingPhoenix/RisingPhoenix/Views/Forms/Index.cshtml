@@ -18,6 +18,33 @@
                 <th>
                     @Html.DisplayNameFor(model => model.FormDate)
                 </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SenderId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RecipientId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RecipientId2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RecipientId3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Location)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClientName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClientInfo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Income)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NonMemberInfo)
+                </th>
             <th></th>
         </tr>
     </thead>
@@ -29,6 +56,33 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FormDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SenderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipientId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipientId2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipientId3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Income)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NonMemberInfo)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.FormId">Edit</a> |
