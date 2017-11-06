@@ -6,6 +6,11 @@ namespace RisingPhoenix.Models
 {
     public partial class TRPDbContext : DbContext
     {
+    public TRPDbContext(DbContextOptions<TRPDbContext> options)
+            : base(options)
+        {
+
+        }
         public virtual DbSet<Attendance> Attendance { get; set; }
         public virtual DbSet<Forms> Forms { get; set; }
         public virtual DbSet<Meetings> Meetings { get; set; }
