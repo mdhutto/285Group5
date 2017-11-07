@@ -9,16 +9,16 @@ using RisingPhoenix.Models;
 
 namespace RisingPhoenix.Controllers
 {
-    public class SecuritiesController : Controller
+    public class SecurityController : Controller
     {
         private readonly TRPDbContext _context;
 
-        public SecuritiesController(TRPDbContext context)
+        public SecurityController(TRPDbContext context)
         {
             _context = context;
         }
 
-        // GET: Securities
+        // GET: Security
         public async Task<IActionResult> Index()
         {
             var TRPDbContext = _context.Security.Include(s => s.Member);
@@ -56,7 +56,7 @@ namespace RisingPhoenix.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MemberId,Username,UserPass,ActiveBool")] Security security)
+        public async Task<IActionResult> Create([Bind("MemberId,UserName,UserPass,ActiveBool")] Security security)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace RisingPhoenix.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MemberId,Username,UserPass,ActiveBool")] Security security)
+        public async Task<IActionResult> Edit(int id, [Bind("MemberId,UserName,UserPass,ActiveBool")] Security security)
         {
             if (id != security.MemberId)
             {
