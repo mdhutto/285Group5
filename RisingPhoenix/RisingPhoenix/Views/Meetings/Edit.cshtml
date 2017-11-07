@@ -19,14 +19,14 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="MeetingId" />
             <div class="form-group">
-                <label asp-for="MeetingDate" class="control-label"></label>
-                <input asp-for="MeetingDate" class="form-control" />
-                <span asp-validation-for="MeetingDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Speaker" class="control-label"></label>
                 <input asp-for="Speaker" class="form-control" />
                 <span asp-validation-for="Speaker" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingDate" class="control-label"></label>
+                <input asp-for="MeetingDate" class="form-control" />
+                <span asp-validation-for="MeetingDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />

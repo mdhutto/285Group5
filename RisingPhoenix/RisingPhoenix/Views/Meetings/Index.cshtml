@@ -16,24 +16,24 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.MeetingDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Speaker)
-                </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Speaker)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingDate)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.MeetingDate)
+                @Html.DisplayFor(modelItem => item.Speaker)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Speaker)
+                @Html.DisplayFor(modelItem => item.MeetingDate)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.MeetingId">Edit</a> |
