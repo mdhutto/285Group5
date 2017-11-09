@@ -19,6 +19,7 @@ namespace RisingPhoenix.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime MeetingDate { get; set; }
+        [Required]
         public string Speaker { get; set; }
         
         public ICollection<Attendance> Attendance { get; set; }
