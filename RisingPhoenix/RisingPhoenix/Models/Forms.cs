@@ -22,7 +22,7 @@ namespace RisingPhoenix.Models
         public string Location { get; set; }
         public string ClientName { get; set; }
         public string ClientInfo { get; set; }
-        public double Income { get; set; }
+        public decimal? Income { get; set; }
         public string NonMemberInfo { get; set; }
 
         [ForeignKey(nameof(SenderId))]
