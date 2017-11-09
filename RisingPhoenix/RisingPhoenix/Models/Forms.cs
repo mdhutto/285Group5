@@ -7,7 +7,7 @@ namespace RisingPhoenix.Models
 {
     public partial class Forms
     { [Key]
-        [Key]
+
         public int FormId { get; set; }
         [Required]
         public int FormType { get; set; }
