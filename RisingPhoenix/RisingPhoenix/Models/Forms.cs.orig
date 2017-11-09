@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-<<<<<<< HEAD
 using System.ComponentModel.DataAnnotations.Schema;
-=======
->>>>>>> 61a26a4f92433e23739398fd0bcd608a2a5663c8
 
 namespace RisingPhoenix.Models
 {
     public partial class Forms
 <<<<<<< HEAD
-    {
+    { 
         [Key]
 =======
     { [Key]
->>>>>>> 61a26a4f92433e23739398fd0bcd608a2a5663c8
+
+>>>>>>> 20c23c0c98886f8c672975559e76349ecccbab72
         public int FormId { get; set; }
         [Required]
         public int FormType { get; set; }
@@ -26,8 +24,6 @@ namespace RisingPhoenix.Models
         public int SenderId { get; set; }
         [Required]
         public int RecipientId { get; set; }
-        public int? RecipientId2 { get; set; }
-        public int? RecipientId3 { get; set; }
         public string Location { get; set; }
         public string ClientName { get; set; }
         public string ClientInfo { get; set; }
@@ -40,12 +36,6 @@ namespace RisingPhoenix.Models
         [ForeignKey(nameof(RecipientId))]
         [Column(Order = 2)]
         public Members Recipient { get; set; }
-        [ForeignKey(nameof(RecipientId2))]
-        [Column(Order = 3)]
-        public Members Recipient2 { get; set; }
-        [ForeignKey(nameof(RecipientId3))]
-        [Column(Order = 4)]
-        public Members Recipient3 { get; set; }
         
     }
 }
