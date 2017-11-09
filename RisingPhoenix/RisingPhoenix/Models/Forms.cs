@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RisingPhoenix.Models
 {
@@ -7,6 +8,8 @@ namespace RisingPhoenix.Models
     {
         public int FormId { get; set; }
         public int FormType { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime FormDate { get; set; }
         public int SenderId { get; set; }
         public int RecipientId { get; set; }

@@ -57,19 +57,29 @@ namespace RisingPhoenix.Models
 
                 entity.Property(e => e.FormId).ValueGeneratedOnAddOrUpdate();
 
-                entity.Property(e => e.ClientInfo).IsUnicode(false);
+                entity.Property(e => e.FormType);
+
+                entity.Property(e => e.FormDate).HasColumnType("date");
+
+                entity.Property(e => e.SenderId);
+
+                entity.Property(e => e.RecipientId);
+
+                entity.Property(e => e.RecipientId2);
+
+                entity.Property(e => e.RecipientId3);
+
+                entity.Property(e => e.Location)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.ClientName)
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.FormDate).HasColumnType("date");
+                entity.Property(e => e.ClientInfo).IsUnicode(false);
 
                 entity.Property(e => e.Income).HasColumnType("money");
-
-                entity.Property(e => e.Location)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
 
                 entity.Property(e => e.NonMemberInfo).IsUnicode(false);
 
@@ -115,16 +125,6 @@ namespace RisingPhoenix.Models
 
                 entity.Property(e => e.MemberId).ValueGeneratedOnAddOrUpdate();
 
-                entity.Property(e => e.Company)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Email)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.FirstName)
                     .IsRequired()
                     .HasMaxLength(50)
@@ -135,11 +135,9 @@ namespace RisingPhoenix.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.MemberSince).HasColumnType("date");
-
-                entity.Property(e => e.Phone)
+                entity.Property(e => e.Company)
                     .IsRequired()
-                    .HasMaxLength(10)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Profession)
@@ -147,9 +145,21 @@ namespace RisingPhoenix.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Phone)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Website)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.Property(e => e.MemberSince).HasColumnType("date");
             });
 
             modelBuilder.Entity<Security>(entity =>
@@ -165,6 +175,8 @@ namespace RisingPhoenix.Models
                 entity.Property(e => e.UserPass)
                     .IsRequired()
                     .IsUnicode(false);
+
+                entity.Property(e => e.ActiveBool);
 
                 entity.HasOne(d => d.Member)
                     .WithOne(p => p.Security)

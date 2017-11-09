@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RisingPhoenix.Models
 {
@@ -22,6 +23,8 @@ namespace RisingPhoenix.Models
         public string Profession { get; set; }
         public string Email { get; set; }
         public string Website { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime MemberSince { get; set; }
         public int AbsenceCount { get; set; }
         public bool AdminBool { get; set; }
