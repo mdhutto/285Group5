@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 namespace RisingPhoenix.Models
 {
     public partial class Members
-    {
+    { 
         public Members()
         {
             Attendance = new HashSet<Attendance>();

@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RisingPhoenix.Models
 {
-    public partial class Security
-    {
-        [Key]
+    public partial class Security    
+    { 
+    	[Key]
         public int MemberId { get; set; }
         [Required]
         public string UserName { get; set; }
