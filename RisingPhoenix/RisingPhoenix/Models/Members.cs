@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RisingPhoenix.Models
 {
     public partial class Members
-    {
+    { 
         public Members()
         {
             Attendance = new HashSet<Attendance>();
@@ -13,7 +14,7 @@ namespace RisingPhoenix.Models
             FormsRecipientId3Navigation = new HashSet<Forms>();
             FormsSender = new HashSet<Forms>();
         }
-
+        [Key]
         public int MemberId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RisingPhoenix.Models
 {
     public partial class Forms
-    {
+    { [Key]
         public int FormId { get; set; }
         public int FormType { get; set; }
         public DateTime FormDate { get; set; }
