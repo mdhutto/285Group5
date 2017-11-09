@@ -42,8 +42,6 @@ namespace RisingPhoenix.Models
         public Security Security { get; set; }
         public ICollection<Attendance> Attendance { get; set; }
         public ICollection<Forms> FormsRecipient { get; set; }
-        public ICollection<Forms> FormsRecipientId2Navigation { get; set; }
-        public ICollection<Forms> FormsRecipientId3Navigation { get; set; }
         public ICollection<Forms> FormsSender { get; set; }
     }
 }
