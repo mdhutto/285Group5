@@ -32,7 +32,11 @@ namespace RisingPhoenix.Models
             {
                 entity.HasKey(e => e.MeetingId);
 
-                entity.Property(e => e.MeetingId).ValueGeneratedNever();
+                entity.Property(e => e.MeetingId).ValueGeneratedOnAddOrUpdate();
+
+                entity.Property(e => e.MemberId);
+
+                entity.Property(e => e.AbsenceBool);
 
                 entity.HasOne(d => d.Meeting)
                     .WithOne(p => p.Attendance)
@@ -51,7 +55,7 @@ namespace RisingPhoenix.Models
             {
                 entity.HasKey(e => e.FormId);
 
-                entity.Property(e => e.FormId).ValueGeneratedNever();
+                entity.Property(e => e.FormId).ValueGeneratedOnAddOrUpdate();
 
                 entity.Property(e => e.ClientInfo).IsUnicode(false);
 
@@ -96,7 +100,7 @@ namespace RisingPhoenix.Models
             {
                 entity.HasKey(e => e.MeetingId);
 
-                entity.Property(e => e.MeetingId).ValueGeneratedNever();
+                entity.Property(e => e.MeetingId).ValueGeneratedOnAddOrUpdate();
 
                 entity.Property(e => e.MeetingDate).HasColumnType("date");
 
@@ -109,7 +113,7 @@ namespace RisingPhoenix.Models
             {
                 entity.HasKey(e => e.MemberId);
 
-                entity.Property(e => e.MemberId).ValueGeneratedNever();
+                entity.Property(e => e.MemberId).ValueGeneratedOnAddOrUpdate();
 
                 entity.Property(e => e.Company)
                     .IsRequired()
@@ -152,7 +156,7 @@ namespace RisingPhoenix.Models
             {
                 entity.HasKey(e => e.MemberId);
 
-                entity.Property(e => e.MemberId).ValueGeneratedNever();
+                entity.Property(e => e.MemberId).ValueGeneratedOnAddOrUpdate();
 
                 entity.Property(e => e.UserName)
                     .IsRequired()

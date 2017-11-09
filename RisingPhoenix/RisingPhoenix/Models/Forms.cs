@@ -23,6 +23,6 @@ namespace RisingPhoenix.Models
         public Members Recipient2 { get; set; }
         public Members Recipient3 { get; set; }
         public Members Sender { get; set; }
-        public Forms InverseForm { get; set; }
+        
     }
 }
