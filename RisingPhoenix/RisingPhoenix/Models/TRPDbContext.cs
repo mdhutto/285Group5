@@ -21,7 +21,7 @@ namespace RisingPhoenix.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=TRPDb;Trusted_Connection=True;");
             }
         }
@@ -69,24 +69,18 @@ namespace RisingPhoenix.Models
 
                 entity.Property(e => e.NonMemberInfo).IsUnicode(false);
 
-                entity.HasOne(d => d.Form)
-                    .WithOne(p => p.InverseForm)
-                    .HasForeignKey<Forms>(d => d.FormId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Forms_Forms");
-
                 entity.HasOne(d => d.Recipient)
                     .WithMany(p => p.FormsRecipient)
                     .HasForeignKey(d => d.RecipientId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Forms_Members_Rec1");
 
-                entity.HasOne(d => d.RecipientId2Navigation)
+                entity.HasOne(d => d.Recipient2)
                     .WithMany(p => p.FormsRecipientId2Navigation)
                     .HasForeignKey(d => d.RecipientId2)
                     .HasConstraintName("FK_Forms_Members_Rec2");
 
-                entity.HasOne(d => d.RecipientId3Navigation)
+                entity.HasOne(d => d.Recipient3)
                     .WithMany(p => p.FormsRecipientId3Navigation)
                     .HasForeignKey(d => d.RecipientId3)
                     .HasConstraintName("FK_Forms_Members_Rec3");

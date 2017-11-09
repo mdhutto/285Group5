@@ -20,8 +20,8 @@ namespace RisingPhoenix.Models
 
         public Forms Form { get; set; }
         public Members Recipient { get; set; }
-        public Members RecipientId2Navigation { get; set; }
-        public Members RecipientId3Navigation { get; set; }
+        public Members Recipient2 { get; set; }
+        public Members Recipient3 { get; set; }
         public Members Sender { get; set; }
         public Forms InverseForm { get; set; }
     }
