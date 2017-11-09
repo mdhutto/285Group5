@@ -10,8 +10,6 @@ namespace RisingPhoenix.Models
         {
             Attendance = new HashSet<Attendance>();
             FormsRecipient = new HashSet<Forms>();
-            FormsRecipientId2Navigation = new HashSet<Forms>();
-            FormsRecipientId3Navigation = new HashSet<Forms>();
             FormsSender = new HashSet<Forms>();
         }
         [Key]
@@ -21,13 +19,16 @@ namespace RisingPhoenix.Models
         [Required]
         public string LastName { get; set; }
         [Required]
+        [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
         [Required]
         public string Company { get; set; }
         [Required]
         public string Profession { get; set; }
         [Required]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+        [DataType(DataType.Url)]
         public string Website { get; set; }
         [Required]
         [DataType(DataType.Date)]

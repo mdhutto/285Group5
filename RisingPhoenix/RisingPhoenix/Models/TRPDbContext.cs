@@ -64,11 +64,7 @@ namespace RisingPhoenix.Models
                 entity.Property(e => e.SenderId);
 
                 entity.Property(e => e.RecipientId);
-
-                entity.Property(e => e.RecipientId2);
-
-                entity.Property(e => e.RecipientId3);
-
+                
                 entity.Property(e => e.Location)
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -88,16 +84,6 @@ namespace RisingPhoenix.Models
                     .HasForeignKey(d => d.RecipientId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Forms_Members_Rec1");
-
-                entity.HasOne(d => d.Recipient2)
-                    .WithMany(p => p.FormsRecipientId2Navigation)
-                    .HasForeignKey(d => d.RecipientId2)
-                    .HasConstraintName("FK_Forms_Members_Rec2");
-
-                entity.HasOne(d => d.Recipient3)
-                    .WithMany(p => p.FormsRecipientId3Navigation)
-                    .HasForeignKey(d => d.RecipientId3)
-                    .HasConstraintName("FK_Forms_Members_Rec3");
 
                 entity.HasOne(d => d.Sender)
                     .WithMany(p => p.FormsSender)

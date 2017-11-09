@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+<<<<<<< HEAD
+using System.ComponentModel.DataAnnotations.Schema;
+=======
+>>>>>>> 61a26a4f92433e23739398fd0bcd608a2a5663c8
+
+namespace RisingPhoenix.Models
+{
+    public partial class Security
+<<<<<<< HEAD
+    {
+        [Key]
+=======
+    { [Key]
+>>>>>>> 61a26a4f92433e23739398fd0bcd608a2a5663c8
+        public int MemberId { get; set; }
+        [Required]
+        public string UserName { get; set; }
+        [Required]
+        public string UserPass { get; set; }
+        [Required]
+        public bool ActiveBool { get; set; }
+
+        [ForeignKey("Members")]
+        public Members Member { get; set; }
+    }
+}

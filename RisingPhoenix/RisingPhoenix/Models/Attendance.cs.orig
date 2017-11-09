@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+<<<<<<< HEAD
+using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
+=======
+>>>>>>> 61a26a4f92433e23739398fd0bcd608a2a5663c8
+
+namespace RisingPhoenix.Models
+{
+    public partial class Attendance
+    {
+        [Key]
+<<<<<<< HEAD
+        public int AttendanceId { get; set; }
+        [Required]
+=======
+>>>>>>> 61a26a4f92433e23739398fd0bcd608a2a5663c8
+        public int MeetingId { get; set; }
+        [Required]
+        public int MemberId { get; set; }
+        [Required]
+        public bool AbsenceBool { get; set; }
+
+        [ForeignKey(nameof(MeetingId))]
+        public Meetings Meeting { get; set; }
+        [ForeignKey(nameof(MemberId))]
+        public Members Member { get; set; }
+    }
+}
