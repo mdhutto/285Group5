@@ -14,19 +14,28 @@ namespace RisingPhoenix.Models
             FormsRecipientId3Navigation = new HashSet<Forms>();
             FormsSender = new HashSet<Forms>();
         }
-
+        [Key]
         public int MemberId { get; set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [Required]
         public string Phone { get; set; }
+        [Required]
         public string Company { get; set; }
+        [Required]
         public string Profession { get; set; }
+        [Required]
         public string Email { get; set; }
         public string Website { get; set; }
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime MemberSince { get; set; }
+        [Required]
         public int AbsenceCount { get; set; }
+        [Required]
         public bool AdminBool { get; set; }
 
         public Security Security { get; set; }

@@ -9,10 +9,14 @@ namespace RisingPhoenix.Models
     {
         [Key]
         public int MemberId { get; set; }
+        [Required]
         public string UserName { get; set; }
+        [Required]
         public string UserPass { get; set; }
+        [Required]
         public bool ActiveBool { get; set; }
 
+        [ForeignKey("Members")]
         public Members Member { get; set; }
     }
 }

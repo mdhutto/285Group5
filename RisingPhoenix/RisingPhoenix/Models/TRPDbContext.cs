@@ -30,17 +30,17 @@ namespace RisingPhoenix.Models
         {
             modelBuilder.Entity<Attendance>(entity =>
             {
-                entity.HasKey(e => e.MeetingId);
+                entity.HasKey(e => e.AttendanceId); //.ValueGeneratedOnAddOrUpdate(); ;
 
-                entity.Property(e => e.MeetingId).ValueGeneratedOnAddOrUpdate();
+                entity.Property(e => e.MeetingId);
 
                 entity.Property(e => e.MemberId);
 
                 entity.Property(e => e.AbsenceBool);
 
                 entity.HasOne(d => d.Meeting)
-                    .WithOne(p => p.Attendance)
-                    .HasForeignKey<Attendance>(d => d.MeetingId)
+                    .WithMany(p => p.Attendance)
+                    .HasForeignKey(d => d.MeetingId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Attendance_Meetings");
 
@@ -55,7 +55,7 @@ namespace RisingPhoenix.Models
             {
                 entity.HasKey(e => e.FormId);
 
-                entity.Property(e => e.FormId).ValueGeneratedOnAddOrUpdate();
+                entity.Property(e => e.FormId);//.ValueGeneratedOnAddOrUpdate();
 
                 entity.Property(e => e.FormType);
 
@@ -110,7 +110,7 @@ namespace RisingPhoenix.Models
             {
                 entity.HasKey(e => e.MeetingId);
 
-                entity.Property(e => e.MeetingId).ValueGeneratedOnAddOrUpdate();
+                entity.Property(e => e.MeetingId);//.ValueGeneratedOnAddOrUpdate();
 
                 entity.Property(e => e.MeetingDate).HasColumnType("date");
 
@@ -123,7 +123,7 @@ namespace RisingPhoenix.Models
             {
                 entity.HasKey(e => e.MemberId);
 
-                entity.Property(e => e.MemberId).ValueGeneratedOnAddOrUpdate();
+                entity.Property(e => e.MemberId);//.ValueGeneratedOnAddOrUpdate();
 
                 entity.Property(e => e.FirstName)
                     .IsRequired()
@@ -166,7 +166,7 @@ namespace RisingPhoenix.Models
             {
                 entity.HasKey(e => e.MemberId);
 
-                entity.Property(e => e.MemberId).ValueGeneratedOnAddOrUpdate();
+                entity.Property(e => e.MemberId);//.ValueGeneratedOnAddOrUpdate();
 
                 entity.Property(e => e.UserName)
                     .IsRequired()
