@@ -1,6 +1,7 @@
 <style > table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
+   table-layout: auto;  
+  border: 1px solid black;
+    
 }
 
 tr:nth-child(even) {

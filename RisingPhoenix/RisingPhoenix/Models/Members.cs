@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace RisingPhoenix.Models
@@ -15,8 +16,10 @@ namespace RisingPhoenix.Models
         [Key]
         public int MemberId { get; set; }
         [Required]
+        [DisplayName("First Namee")]
         public string FirstName { get; set; }
         [Required]
+        [DisplayName("Last Name")]
         public string LastName { get; set; }
         [Required]
         [DataType(DataType.PhoneNumber)]
@@ -31,10 +34,12 @@ namespace RisingPhoenix.Models
         [DataType(DataType.Url)]
         public string Website { get; set; }
         [Required]
+        [DisplayName("Member Since")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime MemberSince { get; set; }
         [Required]
+        [DisplayName("Absence Count")]
         public int AbsenceCount { get; set; }
         [Required]
         public bool AdminBool { get; set; }

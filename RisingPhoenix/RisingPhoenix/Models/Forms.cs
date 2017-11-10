@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -20,9 +21,12 @@ namespace RisingPhoenix.Models
         [Required]
         public int RecipientId { get; set; }
         public string Location { get; set; }
+        [DisplayName("Client Name")]
         public string ClientName { get; set; }
+        [DisplayName("Client Info")]
         public string ClientInfo { get; set; }
         public decimal? Income { get; set; }
+        [DisplayName("Nonmember Info")]
         public string NonMemberInfo { get; set; }
 
         [ForeignKey(nameof(SenderId))]
