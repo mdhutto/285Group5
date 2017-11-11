@@ -1,0 +1,61 @@
+﻿@model RisingPhoenix.Models.Forms
+
+@{
+    ViewData["Title"] = "CreateRS";
+}
+
+<h2>Referral Slip</h2>
+
+<h4>Forms</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateRS">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FormType" class="control-label"></label>
+                <input asp-for="FormType" class="form-control" />
+                <span asp-validation-for="FormType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormDate" class="control-label"></label>
+                <input asp-for="FormDate" class="form-control" />
+                <span asp-validation-for="FormDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SenderId" class="control-label"></label>
+                <select asp-for="SenderId" class ="form-control" asp-items="ViewBag.SenderId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RecipientId" class="control-label"></label>
+                <select asp-for="RecipientId" class ="form-control" asp-items="ViewBag.RecipientId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientName" class="control-label"></label>
+                <input asp-for="ClientName" class="form-control" />
+                <span asp-validation-for="ClientName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientInfo" class="control-label"></label>
+                <input asp-for="ClientInfo" class="form-control" />
+                <span asp-validation-for="ClientInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NonMemberInfo" class="control-label"></label>
+                <input asp-for="NonMemberInfo" class="form-control" />
+                <span asp-validation-for="NonMemberInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

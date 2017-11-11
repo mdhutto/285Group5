@@ -53,7 +53,7 @@ namespace RisingPhoenix.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FormId,FormType,FormDate,SenderId,RecipientId,RecipientId2,RecipientId3,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
+        public async Task<IActionResult> Create([Bind("FormId,FormType,FormDate,SenderId,RecipientId,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace RisingPhoenix.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("FormId,FormType,FormDate,SenderId,RecipientId,RecipientId2,RecipientId3,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
+        public async Task<IActionResult> Edit(int id, [Bind("FormId,FormType,FormDate,SenderId,RecipientId,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
         {
             if (id != forms.FormId)
             {
@@ -147,6 +147,57 @@ namespace RisingPhoenix.Controllers
         private bool FormsExists(int id)
         {
             return _context.Forms.Any(e => e.FormId == id);
+        }
+
+        // These are the individual create commands for each of the 3 different forms **********************************************
+
+        public IActionResult CreateRS()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateRS([Bind("FormId,FormType,FormDate,SenderId,RecipientId,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(forms);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(forms);
+        }
+        public IActionResult CreateHTM()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateHTM([Bind("FormId,FormType,FormDate,SenderId,RecipientId,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(forms);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(forms);
+        }
+        public IActionResult CreateF2F()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateF2F([Bind("FormId,FormType,FormDate,SenderId,RecipientId,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(forms);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(forms);
         }
     }
 }
