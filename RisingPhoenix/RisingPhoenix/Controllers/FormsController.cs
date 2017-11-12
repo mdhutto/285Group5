@@ -160,6 +160,7 @@ namespace RisingPhoenix.Controllers
         public async Task<IActionResult> CreateRS([Bind("FormId,FormType,FormDate,SenderId,RecipientId,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
         {
             forms.FormType = 1;
+            forms.FormDate = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Add(forms);
@@ -177,6 +178,7 @@ namespace RisingPhoenix.Controllers
         public async Task<IActionResult> CreateHTM([Bind("FormId,FormType,FormDate,SenderId,RecipientId,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
         {
             forms.FormType = 2;
+            forms.FormDate = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Add(forms);
@@ -194,6 +196,7 @@ namespace RisingPhoenix.Controllers
         public async Task<IActionResult> CreateF2F([Bind("FormId,FormType,FormDate,SenderId,RecipientId,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
         {
             forms.FormType = 3;
+            forms.FormDate = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Add(forms);
