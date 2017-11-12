@@ -159,6 +159,7 @@ namespace RisingPhoenix.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateRS([Bind("FormId,FormType,FormDate,SenderId,RecipientId,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
         {
+            forms.FormType = 1;
             if (ModelState.IsValid)
             {
                 _context.Add(forms);
@@ -175,6 +176,7 @@ namespace RisingPhoenix.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateHTM([Bind("FormId,FormType,FormDate,SenderId,RecipientId,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
         {
+            forms.FormType = 2;
             if (ModelState.IsValid)
             {
                 _context.Add(forms);
@@ -191,6 +193,7 @@ namespace RisingPhoenix.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateF2F([Bind("FormId,FormType,FormDate,SenderId,RecipientId,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
         {
+            forms.FormType = 3;
             if (ModelState.IsValid)
             {
                 _context.Add(forms);
