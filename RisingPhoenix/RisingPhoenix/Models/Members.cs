@@ -16,7 +16,7 @@ namespace RisingPhoenix.Models
         [Key]
         public int MemberId { get; set; }
         [Required]
-        [DisplayName("First Namee")]
+        [DisplayName("First Name")]
         public string FirstName { get; set; }
         [Required]
         [DisplayName("Last Name")]
