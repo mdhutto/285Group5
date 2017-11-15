@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 
 namespace RisingPhoenix.Models
 {
@@ -17,8 +18,10 @@ namespace RisingPhoenix.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime FormDate { get; set; }
         [Required]
+        [DisplayName("Sender")]
         public int SenderId { get; set; }
         [Required]
+        [DisplayName("Recipient")]
         public int RecipientId { get; set; }
         public string Location { get; set; }
         [DisplayName("Client Name")]
