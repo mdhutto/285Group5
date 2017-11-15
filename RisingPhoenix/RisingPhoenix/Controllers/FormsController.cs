@@ -21,6 +21,7 @@ namespace RisingPhoenix.Controllers
         // GET: Forms
         public async Task<IActionResult> Index()
         {
+            var TRPDbContext = _context.Forms.Include(r => r.Recipient).Include(r => r.Sender);
             return View(await _context.Forms.ToListAsync());
         }
 
@@ -33,6 +34,8 @@ namespace RisingPhoenix.Controllers
             }
 
             var forms = await _context.Forms
+                .Include(r => r.Recipient)
+                .Include(r => r.Sender)
                 .SingleOrDefaultAsync(m => m.FormId == id);
             if (forms == null)
             {
@@ -42,9 +45,11 @@ namespace RisingPhoenix.Controllers
             return View(forms);
         }
 
-        // GET: Forms/Create
-        public IActionResult Create()
+    // GET: Forms/Create
+    public IActionResult Create()
         {
+            ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName");
+            ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName");
             return View();
         }
 
@@ -61,6 +66,8 @@ namespace RisingPhoenix.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.RecipientId);
+            ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.SenderId);
             return View(forms);
         }
 
@@ -77,6 +84,8 @@ namespace RisingPhoenix.Controllers
             {
                 return NotFound();
             }
+            ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.RecipientId);
+            ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.SenderId);
             return View(forms);
         }
 
@@ -112,6 +121,8 @@ namespace RisingPhoenix.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.RecipientId);
+            ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.SenderId);
             return View(forms);
         }
 
@@ -124,6 +135,8 @@ namespace RisingPhoenix.Controllers
             }
 
             var forms = await _context.Forms
+                .Include(r => r.Recipient)
+                .Include(r => r.Sender)
                 .SingleOrDefaultAsync(m => m.FormId == id);
             if (forms == null)
             {
@@ -153,6 +166,8 @@ namespace RisingPhoenix.Controllers
 
         public IActionResult CreateRS()
         {
+            ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName");
+            ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName");
             return View();
         }
         [HttpPost]
@@ -167,10 +182,14 @@ namespace RisingPhoenix.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.RecipientId);
+            ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.SenderId);
             return View(forms);
         }
         public IActionResult CreateHTM()
         {
+            ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName");
+            ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName");
             return View();
         }
         [HttpPost]
@@ -185,10 +204,14 @@ namespace RisingPhoenix.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.RecipientId);
+            ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.SenderId);
             return View(forms);
         }
         public IActionResult CreateF2F()
         {
+            ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName");
+            ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName");
             return View();
         }
         [HttpPost]
@@ -203,6 +226,8 @@ namespace RisingPhoenix.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.RecipientId);
+            ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.SenderId);
             return View(forms);
         }
     }

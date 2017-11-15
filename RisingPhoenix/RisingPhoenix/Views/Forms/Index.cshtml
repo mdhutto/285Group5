@@ -22,10 +22,10 @@
                     @Html.DisplayNameFor(model => model.FormDate)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.SenderId)
+                    @Html.DisplayNameFor(model => model.Sender)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.RecipientId)
+                    @Html.DisplayNameFor(model => model.Recipient)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Location)
@@ -61,10 +61,10 @@
                 @Html.DisplayFor(modelItem => item.FormDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SenderId)
+                @Html.DisplayFor(modelItem => item.Sender.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RecipientId)
+                @Html.DisplayFor(modelItem => item.Recipient.LastName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Location)
