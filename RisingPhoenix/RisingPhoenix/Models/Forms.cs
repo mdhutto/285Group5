@@ -12,8 +12,10 @@ namespace RisingPhoenix.Models
         [Key]
         public int FormId { get; set; }
         [Required]
+        [DisplayName("Form")]
         public int FormType { get; set; }
         [Required]
+        [DisplayName("Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime FormDate { get; set; }
@@ -24,12 +26,12 @@ namespace RisingPhoenix.Models
         [DisplayName("Recipient")]
         public int RecipientId { get; set; }
         public string Location { get; set; }
-        [DisplayName("Client Name")]
+        [DisplayName("Client")]
         public string ClientName { get; set; }
         [DisplayName("Client Info")]
         public string ClientInfo { get; set; }
         public decimal? Income { get; set; }
-        [DisplayName("Nonmember Info")]
+        [DisplayName("Nonmember")]
         public string NonMemberInfo { get; set; }
 
         [ForeignKey(nameof(SenderId))]

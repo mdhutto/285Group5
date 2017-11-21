@@ -9,26 +9,44 @@
 
     <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
 </head>
-<body>
 
-    <div style="text-align:center;">
-        <img src="http://www.thephoenixhasrisen.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-18-at-4.52.36-PM.png" />
+<body class="home page-template-default page page-id-5 custom-background custom-font-enabled single-author">
+    <div id="page" class="hfeed site">
+        <header id="masthead" class="site-header" role="banner">
+            <hgroup>
+                <h1 class="site-title"><a href="http://www.thephoenixhasrisen.com/" title="The Rising Phoenix" rel="home">The Rising Phoenix</a></h1>
+                <h2 class="site-description"></h2>
+            </hgroup>
 
 
-        <ul>
-            <li><a href="Home">Home</a></li>
-            <li><a href="Members">Members</a></li>
-            <li><a href="Forms">Forms</a></li>
-            <li><a href="Forms/CreateRS">Referral Slip</a></li>
-            <li><a href="Forms/CreateHTM">Here's The Money</a></li>
-            <li><a href="Forms/CreateF2F">Face To Face</a></li>
-            <li><a href="Meetings">Meetings</a></li>
-        </ul>
+            <a href="http://www.thephoenixhasrisen.com/"><img src="http://www.thephoenixhasrisen.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-18-at-4.52.36-PM.png" class="header-image" width="932" height="239" alt="" /></a>
+
+
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+                <h3 class="menu-toggle">Menu</h3>
+                <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+                <div class="menu-main-container">
+                    <ul id="menu-main" class="nav-menu">
+                        <li><a href="Home">Home</a></li>
+                        <li><a href="Members">Members</a></li>
+                        <li><a href="Forms">Forms</a></li>
+                        <li><a href="Forms/CreateRS">Referral</a></li>
+                        <li><a href="Forms/CreateHTM">HTM</a></li>
+                        <li><a href="Forms/CreateF2F">F2F</a></li>
+                        <li><a href="Meetings">Meetings</a></li>
+                    </ul>
+                </div>
+            </nav><!-- end of nav -->
+
+        </header>
+
+        @RenderBody()
+
+        @RenderSection("scripts", required: false)
+
     </div>
 
-    @RenderBody()
 
-    @RenderSection("scripts", required: false)
 
     <div style="text-align:center;">
         <p><em>CMPS 285 Software Engineering: Group 5 - Allie Laughlin, Sara Roberts, Victoria Murphy: 2017</em></p>
@@ -64,9 +82,9 @@
             text-decoration: none;
         }
 
-li a:hover {
-        background-color: goldenrod;
-    }
+            li a:hover {
+                background-color: goldenrod;
+            }
 
     body.custom-font-enabled {
         font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -95,4 +113,42 @@ li a:hover {
     tr:hover {
         background-color: gainsboro
     }
+
+
+    /*TIME TO BREAK STUFF! CSS FROM THEIR ACTUAL WEBSITE*/
 </style>
+<link rel='stylesheet' id='contact-form-7-css' href='http://www.thephoenixhasrisen.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-fonts-css' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-style-css' href='http://www.thephoenixhasrisen.com/wp-content/themes/twentytwelve/style.css?ver=4.8.3' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='http://www.thephoenixhasrisen.com/wp-content/themes/twentytwelve/css/ie.css?ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jq_ui_css-css' href='http://www.thephoenixhasrisen.com/wp-content/plugins/ajax-event-calendar/css/jquery-ui-1.8.16.custom.css?ver=1.8.16' type='text/css' media='all' />
+<link rel='stylesheet' id='custom-css' href='http://www.thephoenixhasrisen.com/wp-content/plugins/ajax-event-calendar/css/custom.css?ver=1.0.4' type='text/css' media='all' />
+<link rel='stylesheet' id='tw-recent-posts-widget-css' href='http://www.thephoenixhasrisen.com/wp-content/plugins/tw-recent-posts-widget/tw-recent-posts-widget.css?ver=1.0.5' type='text/css' media='screen' />
+<script type='text/javascript' src='http://www.thephoenixhasrisen.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.thephoenixhasrisen.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://www.thephoenixhasrisen.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.thephoenixhasrisen.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.thephoenixhasrisen.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 4.8.3" />
+<link rel="canonical" href="http://www.thephoenixhasrisen.com/" />
+<link rel='shortlink' href='http://www.thephoenixhasrisen.com/' />
+<link rel="alternate" type="application/json+oembed" href="http://www.thephoenixhasrisen.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.thephoenixhasrisen.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.thephoenixhasrisen.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.thephoenixhasrisen.com%2F&#038;format=xml" />
+<style type="text/css" id="twentytwelve-header-css">
+    .site-title,
+    .site-description {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px); /* IE7 */
+        clip: rect(1px, 1px, 1px, 1px);
+    }
+</style>
+<style type="text/css" id="custom-background-css">
+    body.custom-background {
+        background-color: #f2f2f2;
+    }
+</style>
+<!-- Easy Columns 2.1.1 by Pat Friedl http://www.patrickfriedl.com -->
+<link rel="stylesheet" href="http://www.thephoenixhasrisen.com/wp-content/plugins/easy-columns/css/easy-columns.css" type="text/css" media="screen, projection" />
+

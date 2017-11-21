@@ -29,6 +29,7 @@ namespace RisingPhoenix.Models
         [Required]
         public string Profession { get; set; }
         [Required]
+        [DisplayName("Email")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         [DataType(DataType.Url)]

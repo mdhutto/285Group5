@@ -39,9 +39,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.AbsenceCount)
                 </th>
-                <th>
+                <!--<th>
                     @Html.DisplayNameFor(model => model.AdminBool)
-                </th>
+                </th>-->
             <th></th>
         </tr>
     </thead>
@@ -75,9 +75,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.AbsenceCount)
             </td>
-            <td>
+            <!--<td>
                 @Html.DisplayFor(modelItem => item.AdminBool)
-            </td>
+            </td>-->
             <td>
                 <a asp-action="Edit" asp-route-id="@item.MemberId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.MemberId">Details</a> |
