@@ -8,6 +8,11 @@
 @section scripts {
     <script src="~/dist/main-client.js" asp-append-version="true"></script>
 }
+@using System.Security.Claims;
+
+@if (!User.Identities.Any(u => u.IsAuthenticated))
+{
+    <h1>Hello World</h1>
 <div style="text-align:center">
     <h1>
         The Rising Phoenix Referral Tracker
@@ -27,3 +32,10 @@
     <br><br>
 </div>
 
+}
+else
+{
+    <h1>Hello @User.Identities.First(
+                  u => u.IsAuthenticated && 
+                       u.HasClaim(c => c.Type == ClaimTypes.Name)).FindFirst(ClaimTypes.Name).Value</h1>
+}
