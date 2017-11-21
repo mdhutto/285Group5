@@ -6,16 +6,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using RisingPhoenix.Models;
 
 namespace RisingPhoenix.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly TRPDbContext _context;
+
+        public AccountController (TRPDbContext context)
+        {
+            _context = context;
+        } 
         public async Task<IActionResult> Login(string returnUrl = null)
         {
             const string Issuer = "https://contoso.com";
             var claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Name, "Allie", ClaimValueTypes.String, Issuer));
+            claims.Add(new Claim(ClaimTypes.Name, "stupid", ClaimValueTypes.String, Issuer));
             var userIdentity = new ClaimsIdentity("SuperSecureLogin");
             userIdentity.AddClaims(claims);
             var userPrincipal = new ClaimsPrincipal(userIdentity);

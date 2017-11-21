@@ -15,78 +15,78 @@
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.FormType)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FormDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Sender)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Recipient)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Location)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ClientName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ClientInfo)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Income)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NonMemberInfo)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FormType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FormDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recipient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Income)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NonMemberInfo)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model)
-{
-        <tr>
-            <td>
-                @if (item.FormType == 1)
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (item.FormType == 1)
                 { <text> Referral Slip </text> }
-                @if (item.FormType == 2)
+                    @if (item.FormType == 2)
                 { <text> Here's The Money </text> }
-                @if (item.FormType == 3)
+                    @if (item.FormType == 3)
                 { <text> Face to Face </text> }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FormDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sender.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Recipient.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientInfo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Income)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NonMemberInfo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.FormId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.FormId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.FormId">Delete</a>
-            </td>
-        </tr>
-}
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FormDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Sender.FirstName) @Html.DisplayFor(modelItem => item.Sender.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Recipient.FirstName) @Html.DisplayFor(modelItem => item.Recipient.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientInfo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Income)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NonMemberInfo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.FormId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.FormId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.FormId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

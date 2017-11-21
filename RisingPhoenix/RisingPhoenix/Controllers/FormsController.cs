@@ -22,7 +22,7 @@ namespace RisingPhoenix.Controllers
         public async Task<IActionResult> Index()
         {
             var TRPDbContext = _context.Forms.Include(r => r.Recipient).Include(r => r.Sender);
-            return View(await _context.Forms.ToListAsync());
+            return View(TRPDbContext);
         }
 
         // GET: Forms/Details/5
