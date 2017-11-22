@@ -17,7 +17,7 @@ namespace RisingPhoenix.Models
         [Required]
         [DisplayName("Date")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime FormDate { get; set; }
         [Required]
         [DisplayName("Sender")]
