@@ -16,7 +16,7 @@ namespace RisingPhoenix.Models
         [Required]
         public bool ActiveBool { get; set; }
 
-        [ForeignKey("Members")]
+        [ForeignKey(nameof(MemberId))]
         public Members Member { get; set; }
     }
 }

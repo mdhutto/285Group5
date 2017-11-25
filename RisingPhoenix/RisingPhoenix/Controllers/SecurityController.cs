@@ -22,7 +22,7 @@ namespace RisingPhoenix.Controllers
         public async Task<IActionResult> Index()
         {
             var TRPDbContext = _context.Security.Include(s => s.Member);
-            return View(await TRPDbContext.ToListAsync());
+            return View(TRPDbContext);
         }
 
         // GET: Securities/Details/5
@@ -47,7 +47,7 @@ namespace RisingPhoenix.Controllers
         // GET: Securities/Create
         public IActionResult Create()
         {
-            ViewData["MemberId"] = new SelectList(_context.Members, "MemberId", "Company");
+            ViewData["MemberId"] = new SelectList(_context.Members, "MemberId", "LastName");
             return View();
         }
 
@@ -81,7 +81,7 @@ namespace RisingPhoenix.Controllers
             {
                 return NotFound();
             }
-            ViewData["MemberId"] = new SelectList(_context.Members, "MemberId", "Company", security.MemberId);
+            ViewData["MemberId"] = new SelectList(_context.Members, "MemberId", "LastName", security.MemberId);
             return View(security);
         }
 

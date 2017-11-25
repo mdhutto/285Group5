@@ -12,6 +12,7 @@ namespace RisingPhoenix.Models
             Attendance = new HashSet<Attendance>();
             FormsRecipient = new HashSet<Forms>();
             FormsSender = new HashSet<Forms>();
+            Security = new HashSet<Security>();
         }
         [Key]
         public int MemberId { get; set; }
@@ -44,8 +45,10 @@ namespace RisingPhoenix.Models
         public int AbsenceCount { get; set; }
         [Required]
         public bool AdminBool { get; set; }
+        
+        //public Security Security { get; set; }
 
-        public Security Security { get; set; }
+        public ICollection<Security> Security { get; set; }
         public ICollection<Attendance> Attendance { get; set; }
         public ICollection<Forms> FormsRecipient { get; set; }
         public ICollection<Forms> FormsSender { get; set; }

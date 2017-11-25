@@ -165,8 +165,8 @@ namespace RisingPhoenix.Models
                 entity.Property(e => e.ActiveBool);
 
                 entity.HasOne(d => d.Member)
-                    .WithOne(p => p.Security)
-                    .HasForeignKey<Security>(d => d.MemberId)
+                    .WithMany(p => p.Security)
+                    .HasForeignKey(d => d.MemberId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Security_Members");
             });
