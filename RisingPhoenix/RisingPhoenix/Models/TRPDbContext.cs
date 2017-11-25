@@ -146,6 +146,8 @@ namespace RisingPhoenix.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.MemberSince).HasColumnType("date");
+
+                //entity.Property(e => e.Password).HasColumnType("password");
             });
 
             modelBuilder.Entity<Security>(entity =>
@@ -169,6 +171,7 @@ namespace RisingPhoenix.Models
                     .HasForeignKey(d => d.MemberId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Security_Members");
+
             });
         }
     }

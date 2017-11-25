@@ -58,6 +58,7 @@ namespace RisingPhoenix.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("MemberId,UserName,UserPass,ActiveBool")] Security security)
         {
+           // security.UserPass = "Phoenix1!";
             if (ModelState.IsValid)
             {
                 _context.Add(security);

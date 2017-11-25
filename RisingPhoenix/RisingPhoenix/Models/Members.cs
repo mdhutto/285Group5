@@ -44,8 +44,11 @@ namespace RisingPhoenix.Models
         [DisplayName("Absence Count")]
         public int AbsenceCount { get; set; }
         [Required]
+        [DisplayName("Check this box if this member should be an administrator.")]
         public bool AdminBool { get; set; }
-        
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
         //public Security Security { get; set; }
 
         public ICollection<Security> Security { get; set; }

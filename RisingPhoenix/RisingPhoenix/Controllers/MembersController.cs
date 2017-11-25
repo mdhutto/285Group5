@@ -56,6 +56,7 @@ namespace RisingPhoenix.Controllers
         public async Task<IActionResult> Create([Bind("MemberId,FirstName,LastName,Company,Profession,Phone,Email,Website,MemberSince,AbsenceCount,AdminBool")] Members members)
         {
             members.AbsenceCount = 0;
+            members.Password = "password";
             if (ModelState.IsValid)
             {
                 _context.Add(members);
