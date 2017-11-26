@@ -89,6 +89,7 @@ namespace RisingPhoenix.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("MemberId,FirstName,LastName,Company,Profession,Phone,Email,Website,MemberSince,AbsenceCount,AdminBool")] Members members)
         {
+            members.Password = "password";
             if (id != members.MemberId)
             {
                 return NotFound();
