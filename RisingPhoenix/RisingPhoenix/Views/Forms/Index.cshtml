@@ -9,8 +9,8 @@
 
     <p>
         <!--<a asp-action="Create">Create New</a>-->
-        <a asp-action="CreateRS">Referral Slip </a>
-        <a asp-action="CreateHTM">Here's The Money </a>
+        <a asp-action="CreateRS">Referral Slip </a> |
+        <a asp-action="CreateHTM">Here's The Money </a> |
         <a asp-action="CreateF2F">Face to Face </a>
     </p>
     <br />
@@ -31,9 +31,6 @@
                 @Html.DisplayNameFor(model => model.Recipient)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Location)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.ClientName)
             </th>
             <th>
@@ -43,8 +40,12 @@
                 @Html.DisplayNameFor(model => model.Income)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NonMemberInfo)
+                @Html.DisplayNameFor(model => model.Location)
             </th>
+            <!--
+            <th>
+                @Html.DisplayNameFor(model => model.NonMemberInfo)
+            </th>-->
             <th></th>
         </tr>
     </thead>
@@ -70,9 +71,6 @@
                     @Html.DisplayFor(modelItem => item.Recipient.FirstName) @Html.DisplayFor(modelItem => item.Recipient.LastName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Location)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.ClientName)
                 </td>
                 <td>
@@ -82,8 +80,12 @@
                     @Html.DisplayFor(modelItem => item.Income)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.NonMemberInfo)
+                    @Html.DisplayFor(modelItem => item.Location)
                 </td>
+                <!--
+                <td>
+                    @Html.DisplayFor(modelItem => item.NonMemberInfo)
+                </td>-->
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.FormId">Edit</a> 
                     <a asp-action="Details" asp-route-id="@item.FormId">Details</a> 

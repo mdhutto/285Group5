@@ -34,12 +34,6 @@
             @Html.DisplayFor(model => model.Recipient.LastName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
-        <dt>
             @Html.DisplayNameFor(model => model.ClientName)
         </dt>
         <dd>
@@ -58,13 +52,21 @@
             @Html.DisplayFor(model => model.Income)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <!--
+        <dt>
             @Html.DisplayNameFor(model => model.NonMemberInfo)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.NonMemberInfo)
-        </dd>
+        </dd>-->
     </dl>
 </div>
+<br />
 <div>
     <a asp-action="Edit" asp-route-id="@Model.FormId">Edit</a> |
     <a asp-action="Index">Back to List</a>
