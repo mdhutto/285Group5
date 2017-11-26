@@ -24,6 +24,7 @@ namespace RisingPhoenix.Models
         public string LastName { get; set; }
         [Required]
         [DataType(DataType.PhoneNumber)]
+        [DisplayName("Email")]
         public string Phone { get; set; }
         [Required]
         public string Company { get; set; }
@@ -32,7 +33,7 @@ namespace RisingPhoenix.Models
         [Required]
         [DisplayName("Email")]
         [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
+        public string Username { get; set; }
         [DataType(DataType.Url)]
         public string Website { get; set; }
         [Required]
