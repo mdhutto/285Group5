@@ -49,6 +49,17 @@ namespace RisingPhoenix.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+
+        // SR: Trying to get the data/report page working
+        [DisplayName("Referrals Recieved")]
+        public int frec { get; set; }
+        [DisplayName("Referrals Sent")]
+        public int fsent { get; set; }
+        [DisplayName("Income Generated")]
+        public decimal? fincome { get; set; }
+        [DisplayName("Face to Faces")]
+        public int ff2f { get; set; }
+
         //public Security Security { get; set; }
 
         public ICollection<Security> Security { get; set; }

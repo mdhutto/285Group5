@@ -53,8 +53,13 @@ namespace RisingPhoenix.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MemberId,FirstName,LastName,Company,Profession,Phone,Email,Website,MemberSince,AbsenceCount,AdminBool")] Members members)
+        public async Task<IActionResult> Create([Bind("MemberId,FirstName,LastName,Company,Profession,Phone,Email,Website,MemberSince,AbsenceCount,AdminBool,frec,fsent,fincome,ff2f")] Members members)
         {
+            members.frec = 0;
+            members.fsent = 0;
+            members.fincome = 0;
+            members.ff2f = 0;
+
             members.AbsenceCount = 0;
             members.Password = "password";
             if (ModelState.IsValid)
@@ -87,7 +92,7 @@ namespace RisingPhoenix.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MemberId,FirstName,LastName,Company,Profession,Phone,Email,Website,MemberSince,AbsenceCount,AdminBool")] Members members)
+        public async Task<IActionResult> Edit(int id, [Bind("MemberId,FirstName,LastName,Company,Profession,Phone,Email,Website,MemberSince,AbsenceCount,AdminBool,frec,fsent,fincome,ff2f")] Members members)
         {
             members.Password = "password";
             if (id != members.MemberId)
@@ -150,6 +155,15 @@ namespace RisingPhoenix.Controllers
         private bool MembersExists(int id)
         {
             return _context.Members.Any(e => e.MemberId == id);
+        }
+
+
+
+
+
+        public async Task<IActionResult> Stats()
+        {
+            return View(await _context.Members.ToListAsync());
         }
     }
 }

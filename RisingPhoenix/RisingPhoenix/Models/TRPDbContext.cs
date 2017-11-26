@@ -148,6 +148,12 @@ namespace RisingPhoenix.Models
                 entity.Property(e => e.MemberSince).HasColumnType("date");
 
                 //entity.Property(e => e.Password).HasColumnType("password");
+
+                //SR: STUFF FOR THE REPORT PAGE
+                entity.Property(e => e.frec);
+                entity.Property(e => e.fsent);
+                entity.Property(e => e.fincome).HasColumnType("money");
+                entity.Property(e => e.ff2f);
             });
 
             modelBuilder.Entity<Security>(entity =>

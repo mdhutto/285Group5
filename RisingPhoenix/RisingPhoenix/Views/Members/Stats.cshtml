@@ -1,0 +1,60 @@
+﻿@model IEnumerable<RisingPhoenix.Models.Members>
+
+@{
+    ViewData["Title"] = "Stats";
+}
+
+<h2>Stats</h2>
+
+<!--<p>
+    <a asp-action="Create">Create New</a>
+</p>-->
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    Member
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.frec)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fsent)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fincome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ff2f)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.frec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fsent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fincome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ff2f)
+            </td>
+            <!--
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MemberId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MemberId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MemberId">Delete</a>
+            </td>-->
+        </tr>
+}
+    </tbody>
+</table>

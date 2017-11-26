@@ -184,6 +184,10 @@ namespace RisingPhoenix.Controllers
             }
             ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.RecipientId);
             ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.SenderId);
+
+            forms.Sender.fsent += 1;
+            forms.Recipient.frec += 1;
+
             return View(forms);
         }
         public IActionResult CreateHTM()
@@ -206,6 +210,9 @@ namespace RisingPhoenix.Controllers
             }
             ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.RecipientId);
             ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.SenderId);
+
+            forms.Recipient.fincome += forms.Income;
+
             return View(forms);
         }
         public IActionResult CreateF2F()
@@ -218,8 +225,11 @@ namespace RisingPhoenix.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateF2F([Bind("FormId,FormType,FormDate,SenderId,RecipientId,Location,ClientName,ClientInfo,Income,NonMemberInfo")] Forms forms)
         {
+            
             forms.FormType = 3;
             forms.FormDate = DateTime.Now;
+            
+
             if (ModelState.IsValid)
             {
                 _context.Add(forms);
@@ -228,6 +238,10 @@ namespace RisingPhoenix.Controllers
             }
             ViewData["RecipientId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.RecipientId);
             ViewData["SenderId"] = new SelectList(_context.Members, "MemberId", "LastName", forms.SenderId);
+
+            forms.Sender.ff2f += 1;
+            forms.Recipient.ff2f += 1;
+
             return View(forms);
         }
     }
