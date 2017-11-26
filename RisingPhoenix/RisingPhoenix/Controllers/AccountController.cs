@@ -22,7 +22,7 @@ namespace RisingPhoenix.Controllers
         {
             const string Issuer = "https://contoso.com";
             var claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Name, "stupid", ClaimValueTypes.String, Issuer));
+            claims.Add(new Claim(ClaimTypes.Name, "Phoenix Member", ClaimValueTypes.String, Issuer));
             var userIdentity = new ClaimsIdentity("SuperSecureLogin");
             userIdentity.AddClaims(claims);
             var userPrincipal = new ClaimsPrincipal(userIdentity);
