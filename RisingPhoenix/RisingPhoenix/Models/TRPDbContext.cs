@@ -136,7 +136,7 @@ namespace RisingPhoenix.Models
                     .HasMaxLength(10)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Email)
+                entity.Property(e => e.Username)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
