@@ -38,6 +38,8 @@ namespace RisingPhoenix
             services.AddMvc();
             var connection = @"Server=(localdb)\mssqllocaldb;Database=TRPDb;Trusted_Connection=True;";
             services.AddDbContext<TRPDbContext>(options => options.UseSqlServer(connection));
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
