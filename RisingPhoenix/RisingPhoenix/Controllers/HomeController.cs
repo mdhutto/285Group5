@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
+using MailKit.Net.Smtp;
 
 namespace RisingPhoenix.Controllers
 {
@@ -13,7 +15,7 @@ namespace RisingPhoenix.Controllers
        
         public IActionResult Index()
         {
-            return View();
+                return View();
         }
 
         public IActionResult Error()

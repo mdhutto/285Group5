@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RisingPhoenix.Models;
+using MimeKit;
+using MailKit.Net.Smtp;
 
 namespace RisingPhoenix.Controllers
 {
@@ -187,6 +189,24 @@ namespace RisingPhoenix.Controllers
 
             forms.Sender.fsent += 1;
             forms.Recipient.frec += 1;
+
+            // THIS IS FOR SENDING MAIL ********************************************************
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("The Rising Phoenix", "285group5@gmail.com"));
+            message.To.Add(new MailboxAddress("Member", "happie4cats@gmail.com"));
+            message.Subject = "New TRP Referral!";
+            message.Body = new TextPart("plain")
+            {
+                Text = "You have recieved the following Referral from "// + forms.Sender.FirstName + " " + forms.Sender.LastName 
+            };
+            using (var recipient = new SmtpClient())
+            {
+                recipient.Connect("smtp.gmail.com",587,false);
+                recipient.Authenticate("285group5@gmail.com", "risingphoenix285");
+                recipient.Send(message);
+                recipient.Disconnect(true);
+            }
+            // THIS IS FOR SENDING MAIL ********************************************************
 
             return View(forms);
         }
