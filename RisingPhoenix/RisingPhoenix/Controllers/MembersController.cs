@@ -56,9 +56,6 @@ namespace RisingPhoenix.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("MemberId,FirstName,LastName,Company,Profession,Phone,Username,Website,MemberSince,AbsenceCount,AdminBool,frec,fsent,fincome,ff2f")] Members members)
-            [Bind(
-                "MemberId,FirstName,LastName,Company,Profession,Phone,Email,Website,MemberSince,AbsenceCount,AdminBool,frec,fsent,fincome,ff2f")]
-            Members members)
         {
             members.frec = 0;
             members.fsent = 0;
@@ -98,9 +95,6 @@ namespace RisingPhoenix.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("MemberId,FirstName,LastName,Company,Profession,Phone,Username,Website,MemberSince,AbsenceCount,AdminBool,frec,fsent,fincome,ff2f")] Members members)
-            [Bind(
-                "MemberId,FirstName,LastName,Company,Profession,Phone,Email,Website,MemberSince,AbsenceCount,AdminBool,frec,fsent,fincome,ff2f")]
-            Members members)
         {
             members.Password = "password";
             if (id != members.MemberId)
@@ -165,15 +159,10 @@ namespace RisingPhoenix.Controllers
             return _context.Members.Any(e => e.MemberId == id);
         }
 
-
-
-
-
         public async Task<IActionResult> Stats()
         {
             return View(await _context.Members.ToListAsync());
         }
-
 
         public IActionResult Login()
         {
