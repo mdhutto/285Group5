@@ -28,9 +28,9 @@
         Login
     </h3>
     <br />
-    <form action="/action_page.php">
-        Username: <input type="text" name="username"><br><br>
-        Password: <input type="password" name="password"><br><br>
+    <form asp-controller="Members" asp-action="Login" method="post">
+        Username: <input type="text" name="Username" id="Username"><br><br>
+        Password: <input type="password" name="Password" id="Password"><br><br>
         <input type="submit" value="Login">
     </form>
     <br><br>
