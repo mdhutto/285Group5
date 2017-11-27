@@ -189,7 +189,7 @@ namespace RisingPhoenix.Controllers
 // create claims
             List<Claim> claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, "Allie"),
+                new Claim(ClaimTypes.Name, "Phoenix Admin"),
                 new Claim(ClaimTypes.Email, inputModel.Username)
             };
 
@@ -209,11 +209,14 @@ namespace RisingPhoenix.Controllers
 
         private bool IsAuthentic(string username, string password)
         {
-            
-
-            //fix this 
-
-            return true;
+            if (username == "admin" && password == "password") 
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public async Task<IActionResult> Logout()
